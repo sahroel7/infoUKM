@@ -1,0 +1,296 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #F3F4F6; /* Latar abu-abu muda */
+    color: #1F2937;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* 3. Header Navigasi (Pengganti .main-header) */
+.header-nav {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.header-nav span {
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.header-nav span strong {
+    font-weight: 600;
+    color: #111827;
+}
+
+.header-nav .logout-link {
+    color: #0D9488; /* Warna utama Teal */
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 12px;
+}
+.header-nav .logout-link:hover { text-decoration: underline; }
+
+/* 4. Judul Halaman */
+h1, h2 {
+    font-weight: 600;
+    color: #111827;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 24px;
+}
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+
+/* 5. Form (General) */
+/* Mengganti input standar */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    background-color: #F9FAFB;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    margin-top: 4px; /* Kasih jarak dari label jika ada */
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0D9488;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+/* 6. Form Login & Registrasi (Pengganti .auth-card) */
+.form-auth {
+    max-width: 400px;
+    width: 100%;
+    margin: 40px auto;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 32px 40px;
+}
+.form-auth h1 {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+.form-auth input[type="text"],
+.form-auth input[type="password"] {
+    margin-bottom: 20px; /* Gantikan <br> */
+}
+.form-auth br {
+     display: none; /* Sembunyikan <br> */
+}
+.form-auth input[type="submit"] {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    margin-top: 10px;
+    /* Styling .btn-primary */
+    background-color: #0D9488;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.form-auth input[type="submit"]:hover { background-color: #0F766E; }
+
+.form-footer { /* .secondary-action */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6B7280;
+}
+.form-footer a { /* .link-primary */
+    color: #0D9488;
+    text-decoration: none;
+    font-weight: 500;
+}
+.form-footer a:hover { text-decoration: underline; }
+
+/* 7. Form Admin (Pengganti .card) */
+.form-post {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 32px 40px;
+    width: 100%;
+    margin-bottom: 24px;
+    max-width: 800px; /* Lebih lebar dari login */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Styling <table> di dalam form-post */
+.form-post table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.form-post td {
+    padding: 10px 4px;
+    vertical-align: top;
+}
+.form-post td:first-child {
+    font-weight: 500;
+    color: #374151;
+    padding-top: 22px; /* Paskan dengan padding input */
+    width: 150px; /* Lebar label */
+    white-space: nowrap; /* Agar label tidak terpotong */
+    padding-right: 15px;
+}
+.form-post input[type="submit"] {
+    /* .btn .btn-primary */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #0D9488;
+    color: white;
+}
+.form-post input[type="submit"]:hover { background-color: #0F766E; }
+
+.form-post a { /* Tombol Batal */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #F3F4F6;
+    color: #374151;
+    transition: all 0.2s ease;
+    margin-left: 10px;
+}
+.form-post a:hover { background-color: #E5E7EB; }
+
+/* 8. Tabel Data (Pengganti .modern-table) */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f1f1f1;
+    border-radius: 12px; /* Rounded table */
+    overflow: hidden; /* Penting untuk border-radius */
+    font-size: 14px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+    /* Tambahkan ini untuk scroll mobile */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.data-table th,
+.data-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB;
+    border-right: none; /* Hapus border lama */
+    border-left: none; /* Hapus border lama */
+    border-top: none; /* Hapus border lama */
+}
+.data-table th {
+    background-color: #0D9488;
+    color: #f0f2f5;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #E5E7EB;
+}
+.data-table tr:first-child th:first-child { border-top-left-radius: 12px; }
+.data-table tr:first-child th:last-child { border-top-right-radius: 12px; }
+.data-table tr:last-child td:first-child { border-bottom-left-radius: 12px; }
+.data-table tr:last-child td:last-child { border-bottom-right-radius: 12px; }
+
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) { background-color: #F9FAFB; }
+
+/* Link di dalam tabel */
+.data-table .register-link {
+    /* .link-primary */
+    color: #0D9488;
+    text-decoration: none;
+    font-weight: 500;
+    background: none; /* Hapus background biru lama */
+    padding: 0;
+}
+.data-table .register-link:hover { text-decoration: underline; }
+
+/* 9. Tombol Aksi di Tabel */
+.action-links {
+    white-space: nowrap;
+}
+.action-links a {
+    padding: 6px 12px; /* Tombol lebih kecil */
+    font-size: 12px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: white;
+}
+.action-links .update-link {
+    /* .btn .btn-secondary */
+    background-color: #2563EB;
+}
+.action-links .update-link:hover { background-color: #1D4ED8; }
+.action-links .delete-link {
+    /* .btn .btn-danger */
+    background-color: #DC2626;
+}
+.action-links .delete-link:hover { background-color: #B91C1C; }
+
+/* 10. Pesan Error & Sukses (dari kode PHP) */
+.form-error, .form-success {
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.form-error {
+    color: #DC2626;
+    background-color: #FEF2F2;
+    border: 1px solid #FCA5A5;
+}
+.form-success {
+    color: #0F766E;
+    background-color: #F0FDFA;
+    border: 1px solid #5EEAD4;
+}
