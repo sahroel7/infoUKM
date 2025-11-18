@@ -3,7 +3,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Cek jika pengguna belum login, redirect ke halaman login
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -30,7 +29,6 @@ $dataukm = $postingan->getAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="style.css">
     <title>Info UKM & Organisasi</title>
 </head>
